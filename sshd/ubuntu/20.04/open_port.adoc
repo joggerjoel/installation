@@ -1,0 +1,10 @@
+https://www.vultr.com/docs/changing-your-ssh-port-for-extra-security-on-centos-6-or-7
+
+iptables -I INPUT -p tcp --dport 2124 --syn -j ACCEPT
+
+vi /etc/ssh/ssh_config
+Port 55222
+
+service sshd restart
+
+https://portforward.com/verizon/fios-quantum-gateway/
