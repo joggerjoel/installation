@@ -1,9 +1,18 @@
+=Client
+vi ~/.ssh/config
+Host mydomain
+  Hostname mydomain.computer.com
+  User username
+  Port 2124
+
+=Server
+
 https://www.vultr.com/docs/changing-your-ssh-port-for-extra-security-on-centos-6-or-7
 
 iptables -I INPUT -p tcp --dport 2124 --syn -j ACCEPT
 
 vi /etc/ssh/ssh_config
-Port 55222
+Port 2124
 
 service sshd restart
 
