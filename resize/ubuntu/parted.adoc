@@ -1,0 +1,4 @@
+https://serverfault.com/questions/897383/resize-non-root-partition-without-deleting-it
+
+sudo parted /dev/sdb resizepart 1 400M
+sudo resize2fs /dev/sdb1 400M
