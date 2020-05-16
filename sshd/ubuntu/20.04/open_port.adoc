@@ -17,3 +17,6 @@ Port 2124
 service sshd restart
 
 https://portforward.com/verizon/fios-quantum-gateway/
+
+apt-get install -y iptables-persistent
+iptables-save > /etc/iptables/rules.v4
