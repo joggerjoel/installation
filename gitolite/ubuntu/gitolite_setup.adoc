@@ -1,0 +1,11 @@
+https://lobotuerto.com/blog/how-to-setup-your-own-private-git-repositories-with-gitolite/#installation
+
+sudo apt install git
+
+sudo su git -l
+git clone https://github.com/sitaramc/gitolite ~/gitolite
+mkdir ~/bin
+~/gitolite/install -to ~/bin
+
+sudo su git -l
+gitolite setup -pk ~/.ssh/user.pub
