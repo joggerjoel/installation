@@ -1,0 +1,6 @@
+https://www.digitalocean.com/community/tutorials/how-to-install-linux-apache-mysql-php-lamp-stack-on-ubuntu-16-04
+
+2c2
+<       DirectoryIndex index.html index.cgi index.pl index.php index.xhtml index.htm
+---
+>       DirectoryIndex index.php index.html index.cgi index.pl index.xhtml index.htm
