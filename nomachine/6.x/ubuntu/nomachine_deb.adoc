@@ -1,7 +1,8 @@
-https://www.nomachine.com/download/download&id=4
+https://www.nomachine.com/download/download&id=4 +
 
-sudo dpkg -i nomachine_6.10.12_1_amd64.deb
+sudo dpkg -i nomachine_6.10.12_1_amd64.deb +
 
+[source,diff]
 /usr/NX/etc/server.cfg
 654c654
 < VirtualDesktopAuthorization 0
@@ -16,8 +17,7 @@ sudo dpkg -i nomachine_6.10.12_1_amd64.deb
 ---
 > #PhysicalDesktopAuthorization 1
 
-#prevent white screen
-sudo service gdm stop
-
-sudo /etc/NX/nxserver --restart
-sudo /etc/NX/nxserver --status
+#prevent white screen +
+sudo service gdm stop +
+sudo /etc/NX/nxserver --restart +
+sudo /etc/NX/nxserver --status +
