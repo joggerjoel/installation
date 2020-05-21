@@ -6,7 +6,16 @@ sudo add-apt-repository ppa:ondrej/php
 sudo apt install -y php7.3 php7.3-common php7.3-opcache php7.3-cli php7.3-gd php7.3-curl 
 
 #mysql
+
 sudo apt install -y php7.3-mysql
 
 #postgres
+
 sudo apt install -y php7.3-pgsql
+
+php -v
+
+PHP 7.3.18-1+ubuntu20.04.1+deb.sury.org+1 (cli) (built: May 14 2020 10:36:07) ( NTS )
+Copyright (c) 1997-2018 The PHP Group
+Zend Engine v3.3.18, Copyright (c) 1998-2018 Zend Technologies
+    with Zend OPcache v7.3.18-1+ubuntu20.04.1+deb.sury.org+1, Copyright (c) 1999-2018, by Zend Technologies
