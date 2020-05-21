@@ -1,0 +1,2 @@
+apt-get install -y postgresql-client-12 postgresql-client-common +
+psql -h 192.168.1.2 -d database -U username
