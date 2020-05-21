@@ -19,5 +19,5 @@ sudo dpkg -i nomachine_6.10.12_1_amd64.deb
 #prevent white screen
 sudo service gdm stop
 
-service nxserver restart
-
+sudo /etc/NX/nxserver --restart
+sudo /etc/NX/nxserver --status
