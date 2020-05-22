@@ -1,5 +1,32 @@
+sudo apt install nginx -y
+nginx -v
+nginx version: nginx/1.17.10 (Ubuntu)
+
+cd /etc/nginx/sites-available
+cp default project
+
+cd /etc/nginx/sites-enabled
+ln -s /etc/nginx/sites-available/project .
+
+nginx -t
+service nginx restart
+
 cp -rf ~/Document/Projects/project-5.2 /var/www/html/
+ln -s project-5.2 project
+
+chown -R www-data *
 cd project-5.2
 
 sudo chgrp -R www-data storage bootstrap/cache
 sudo chmod -R ug+rwx storage bootstrap/cache
+
+apt-get install -y nginx php7.3-fpm libmcrypt-dev
+
+php.ini
+[source,diff]
+793c793
+< ;cgi.fix_pathinfo=1
+---
+> cgi.fix_pathinfo=0
+
+https://stackoverflow.com/questions/51817913/unserialize-error-at-offset-0-of-40-bytes-error/52001138
