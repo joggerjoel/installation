@@ -1,0 +1,2 @@
+brew tap elastic/tap
+brew install elastic/tap/kibana-full
