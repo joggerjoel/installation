@@ -1,2 +1,3 @@
-brew tap elastic/tap
-brew install elastic/tap/kibana-full
+https://www.elastic.co/guide/en/kibana/current/brew.html +
+brew tap elastic/tap +
+brew install elastic/tap/kibana-full +
