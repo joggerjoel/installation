@@ -1,0 +1,3 @@
+https://zoomadmin.com/HowToInstall/UbuntuPackage/net-tools
+
+apt-get -y install net-tools
