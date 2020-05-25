@@ -8,10 +8,6 @@ sudo dpkg -i nomachine_6.10.12_1_amd64.deb +
 < VirtualDesktopAuthorization 0
 ---
 > #VirtualDesktopAuthorization 1
-668c668
-< PhysicalDesktopSharing 1
----
-> #PhysicalDesktopSharing 1
 702c702
 < PhysicalDesktopAuthorization 0
 ---
