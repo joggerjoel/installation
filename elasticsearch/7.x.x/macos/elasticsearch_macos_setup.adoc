@@ -2,3 +2,32 @@ https://www.elastic.co/guide/en/elasticsearch/reference/7.x/brew.html
 
 brew tap elastic/tap
 brew install elastic/tap/elasticsearch-full
+
+brew info elasticsearch
+/usr/local/etc/elasticsearch
+
+
+Security
+https://www.elastic.co/blog/elasticsearch-security-configure-tls-ssl-pki-authentication
+
+curl -X POST "localhost:9200/_xpack/license/start_trial?acknowledge=true"
+
+cd /usr/local/Cellar/elasticsearch-full/7.7.0
+
+bin/elasticsearch-certutil ca
+ENTER ENTER
+bin/elasticsearch-certutil cert --ca elastic-stack-ca.p12
+ENTER ENTER ENTER
+
+bin/elasticsearch-setup-passwords interactive
+
+bin/elasticsearch-certutil cert --ca \
+/usr/local/Cellar/elasticsearch-full/7.7.0/libexec/elastic-stack-ca.p12 \
+-name "CN=something,OU=Consulting Team,DC=mydomain,DC=com"
+
+openssl pkcs12 -in libexec/client.p12 -nocerts -nodes > libexec/client.key
+openssl pkcs12 -in libexec/client.p12 -clcerts -nokeys > libexec/client.cer
+openssl pkcs12 -in libexec/client.p12 -clcerts -nokeys -chain > libexec/client-ca.cer
+
+curl https://localhost:9200/_xpack/security/_authenticate?pretty --key client.key --cert client.cer --cacert client-ca.cer -k -v -u elastic:elastic
+
