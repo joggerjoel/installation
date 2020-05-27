@@ -5,3 +5,4 @@ sudo apt install mariadb-server
 sudo mysql_secure_installation
 
 sudo systemctl status mariadb
+sudo mysqladmin version
