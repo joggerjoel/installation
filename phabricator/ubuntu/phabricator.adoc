@@ -1,0 +1,9 @@
+apt-get update && apt-get upgrade
+apt-get install git nginx mysql-server
+apt-get purge `dpkg -l | grep php| awk '{print $2}' |tr "\n" " "`
+add-apt-repository ppa:ondrej/php
+apt-get install -y php7.4 php7.4-fpm php7.4-mbstring php7.4-common php7.4-mysql php7.4-curl php7.4-json php7.4-gd php-apcu php-pear
+update-alternatives --set "php" "/usr/bin/php7.4"
+
+apt-get install python-pygments
+systemctl enable php7.4-fpm
