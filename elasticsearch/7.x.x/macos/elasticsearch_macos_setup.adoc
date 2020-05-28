@@ -4,7 +4,7 @@ brew tap elastic/tap
 brew install elastic/tap/elasticsearch-full
 
 brew info elasticsearch
-/usr/local/etc/elasticsearch
+cd /usr/local/etc/elasticsearch
 
 
 Security
