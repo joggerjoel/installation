@@ -31,3 +31,4 @@ openssl pkcs12 -in libexec/client.p12 -clcerts -nokeys -chain > libexec/client-c
 
 curl https://localhost:9200/_xpack/security/_authenticate?pretty --key client.key --cert client.cer --cacert client-ca.cer -k -v -u elastic:elastic
 
+bin/elasticsearch-certutil http
