@@ -7,3 +7,28 @@ update-alternatives --set "php" "/usr/bin/php7.4"
 
 apt-get install python-pygments
 systemctl enable php7.4-fpm
+
+https://thecustomizewindows.com/2015/07/fix-connect-to-unixvarrunphp5-fpm-sock-failed/
+
+https://stackoverflow.com/questions/28068155/access-denied-for-user-rootlocalhost-using-password-yes-after-new-instal
+GRANT ALL PRIVILEGES ON *.* TO 'root'@'localhost' IDENTIFIED BY 'password';
+
+/etc/php/7.4/fpm/php.ini
+post_max_size = 32M
+opcache.validate_timestamps=1
+opcache.revalidate_freq=2
+
+/etc/mysql/mariadb.conf.d/50-server.cnf
+max_allowed_packet     = 32M
+sql_mode=STRICT_ALL_TABLES
+innodb_buffer_pool_size=1600M
+
+mkdir -p /var/repo
+chown -R www-data.www-data /var/repo
+chmod 755 /var/repo
+
+sudo apt install python3-pip
+pip3 install Pygments
+
+service mariadb restart
+service php7.4-fpm restart
