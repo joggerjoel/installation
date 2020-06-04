@@ -10,6 +10,7 @@ sudo systemctl enable elasticsearch.service
 sudo systemctl start elasticsearch.service
 
 sudo swapoff -a
+timedatectl set-timezone America/New_York
 
 curl -XGET localhost:9200
 {
